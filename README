@@ -1,0 +1,9 @@
+ModelTrain.py
+
+    I tried getting rid of the warnings but the way the defaults work it ends up making my SVC perform worse if
+    I specify max_iter
+
+    I tried to catch the exception that is the warning and ignore warnings using the warnings package, neither of which
+    worked
+
+I have another class called
