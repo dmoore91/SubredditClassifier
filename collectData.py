@@ -1,5 +1,6 @@
 import praw
 import json
+from random import shuffle
 
 def store_comments_for_dankchristianmemes(reddit):
     list_of_comments = []
@@ -10,6 +11,8 @@ def store_comments_for_dankchristianmemes(reddit):
         to_dict = vars(comment)
         sub_dict = {field: to_dict.get(field) for field in fields}
         list_of_comments.append(sub_dict)
+
+    shuffle(list_of_comments)
 
     with open("dcm_comments_training_data.txt", "w") as f:
         json.dump(list_of_comments[:500], f)
@@ -31,6 +34,7 @@ def store_comments_for_izlam(reddit):
         sub_dict = {field: to_dict.get(field) for field in fields}
         list_of_comments.append(sub_dict)
 
+    shuffle(list_of_comments)
 
     with open("Izlam_comments_training_data.txt", "w") as f:
         json.dump(list_of_comments[:500], f)
